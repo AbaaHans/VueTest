@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Mon panier</h1>
+        <ul>
+            <li>Banane : {{bananeOf}} $</li>
+            <li> Anana : {{ananaOf}} $</li>
+            <li> Mangue : {{mangueOf}} $</li>
+        </ul>
+
+        <h3> Total : {{ Totalprice }} $</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+
+            data : {
+                bananeOf : 15,
+                ananaOf : 10,
+                mangueOf : 5
+            },
+            computed: {
+                Totalprice() {
+                    return this.bananeOf + this.ananaOf + this.mangueOf
+                }
+        }
+    })
+       
+
+    </script>
+</body>
+</html>
